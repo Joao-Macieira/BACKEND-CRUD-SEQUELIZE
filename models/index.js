@@ -5,4 +5,6 @@ const sequelize = new Sequelize('crud-orm', 'root', 'root', {
   host: '127.0.0.1'
 });
 
-sequelize.sync({ force: true }).then(() => console.log('syncked'));
+sequelize.import('./people.js');
+
+sequelize.sync().then(() => console.log('syncked'));
