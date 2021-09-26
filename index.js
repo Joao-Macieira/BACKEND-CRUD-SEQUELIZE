@@ -4,6 +4,8 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
+const model = require('./models/index');
+
 const personsRoute = require('./routes/persons');
 
 app.use(express.static('public'));

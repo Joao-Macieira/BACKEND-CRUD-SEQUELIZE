@@ -5,4 +5,4 @@ const sequelize = new Sequelize('crud-orm', 'root', 'root', {
   host: '127.0.0.1'
 });
 
-sequelize.autehenticate(() => console.log('auth'));
+sequelize.authenticate(() => console.log('auth'));
