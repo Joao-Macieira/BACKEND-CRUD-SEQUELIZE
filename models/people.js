@@ -7,4 +7,4 @@ const PeopleModel = (sequelize, DataTypes) => {
   return People;
 }
 
-
+module.exports = PeopleModel;
