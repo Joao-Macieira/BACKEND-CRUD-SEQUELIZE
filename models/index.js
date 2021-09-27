@@ -7,4 +7,4 @@ const sequelize = new Sequelize('crud-orm', 'root', 'root', {
 
 sequelize.import('./people.js');
 
-sequelize.sync().then(() => console.log('syncked'));
+module.exports = sequelize;

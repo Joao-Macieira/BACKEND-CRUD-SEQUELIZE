@@ -18,4 +18,6 @@ app.use('/pessoas', personsRoute);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.listen(port, () => console.log(`Server started at ${port}`));
+model.sync().then(() => {
+  app.listen(port, () => console.log(`Server started at ${port}`));
+})
