@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+
+<h1>Pessoas</h1>
+<p><a href="/pessoas/create">Nova pessoa</a></p>
+
+<table class="table table-striped table-hover table-bordered">
+  <tr>
+    <th>Nome</th>
+    <th>Cargo</th>
+    <th>Ações</th>
+  </tr>
+
+  <% peoples.map( people => { %>
+
+    <tr>
+      <td><%= people.name %></td>
+      <td><%= people.office %></td>
+      <td>
+        <div class="btn-group" role="group">
+          <a href="/pessoas/edit/<%= people.id %>" class="btn btn-default">Editar</a>
+          <a href="/pessoas/delete/<%= people.id %>" class="btn btn-default">Excluir</a>
+        </div>
+      </td>
+    </tr>
+
+  <% }) %>
+</table>
+
+<%- include('../partials/footer') %>

@@ -8,16 +8,18 @@ const model = require('./models/index');
 
 const personsRoute = require('./routes/persons');
 
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.get('/', (request, response) => {
   response.render('index');
 });
+
 app.use('/pessoas', personsRoute);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-model.sync().then(() => {
+model.sequelize.sync().then(() => {
   app.listen(port, () => console.log(`Server started at ${port}`));
 })
