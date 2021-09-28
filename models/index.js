@@ -15,6 +15,12 @@ fs.readdirSync(__dirname).filter((file) => file !== 'index.js').forEach((file) =
   models[model.name] = model;
 });
 
+Object.keys(models).forEach( modelName => {
+  if ('associate' in models[modelName]) {
+    models[modelName].associate(models)
+  }
+});
+
 module.exports = {
   sequelize,
   models
