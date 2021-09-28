@@ -15,8 +15,41 @@ const createProcess = async ({ People }, request, response) => {
   response.redirect('/pessoas');
 };
 
+const editForm = async ({ People }, request, response) => {
+  const { id } = request.params;
+  const people = await People.findByPk(id);
+  response.render('pessoas/edit', { people });
+};
+
+const editProcess = async ({ People }, request, response) => {
+  const { id } = request.params;
+
+  await People.update(request.body, {
+    where: {
+      id
+    }
+  });
+
+  response.redirect('/pessoas');
+};
+
+const deleteOne = async ({ People }, request, response) => {
+  const { id } = request.params;
+
+  await People.destroy({
+    where: {
+      id
+    }
+  });
+
+  response.redirect('/pessoas');
+};
+
 module.exports = {
   index,
   createForm,
-  createProcess
+  createProcess,
+  editForm,
+  editProcess,
+  deleteOne
 }
