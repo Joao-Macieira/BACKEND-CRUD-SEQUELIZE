@@ -25,6 +25,7 @@ yarn start
 
 * [node.js](https://nodejs.org/en/) -JavaScript runtime built on Chrome's V8 JavaScript engine.
 * [EJS](https://ejs.co/) - Embedded JavaScript templating.
+* [Bootstrap](https://getbootstrap.com/) - Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.
 * [Sequelize](https://sequelize.org/) - Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server. It features solid transaction support, relations, eager and lazy loading, read replication and more.
 
 ## Author:
